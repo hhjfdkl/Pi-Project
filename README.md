@@ -14,11 +14,13 @@ Chasis: CanaKit Case for Raspberry Pi 5
 Cooling: Raspberry Pi Active Cooler
 SD Card: MicroSD Card 32GB
 - Also, a USB adapter to flash the OS onto the card
-Network cable: Cat5 or Cat6
+Network cable: Cat5/Cat6 cable
 
 ## Software
-Operating System: OpenMediaVault (OMV)
-Raspberry Pi Imager: To flash OMV onto the MicrSD card
+Operating System: Raspberry Pi OS 64-bit Lite
+Raspberry Pi Imager: To flash OS onto the microSD card
+Hosted Application: OpenMediaVault (OMV)
+
 
 ## Steps for Basic Setup
 Hardware Assembly
@@ -26,11 +28,11 @@ Hardware Assembly
 2. Connect cables
 
 Put image onto MicroSD
-0. Plug in the MicroSD with your USB adapter
-1. Use Raspberry Pi Imager
-2. Select Raspberry Pi 5 for Device
-3. Select Raspberry Pi OS Lite for Operating System
-4. Select the MicroSD for Storage 
+1. Plug in the MicroSD with your USB adapter
+2. Use Raspberry Pi Imager
+3. Select Raspberry Pi 5 for Device
+4. Select Raspberry Pi OS Lite for Operating System
+5. Select the MicroSD for Storage 
 	- Review the device and make sure it's the correct one
 
 Put the imaged microSD card into the pi, power it on and connect it to your router via cable
@@ -63,7 +65,7 @@ Now that the drive is mounted and a shared folder is created, we can set up shar
 
 ## Issues encountered
 7/12/25: Don't try to use NFS with NTFS. SMB works with NTFS easily.
-	If you want to use NFS, format your hard drive as ext4. In my case, I'm using a prior external hard drive that was originally used with a Windows machine
+	If you want to use NFS, format your hard drive as ext4. In my case, I'm using a prior external hard drive that was originally used with a Windows machine, so it's NTFS.
 7/12/25: When setting up your shared folder, *make sure you pay attention to the relative path*
 	I had set "Test1" as my original share name, and it pre-populates the relative path to match. This created an empty directory called "Test1" in my hard drive and shared that on the network.
 
@@ -71,4 +73,4 @@ Now that the drive is mounted and a shared folder is created, we can set up shar
 7/12/25 : Only conducted the basic set up. I'll document any future changes or tinkering on this Pi here. 
 - Enabled monitoring, set up the dashboard.
 - Clock was out of sync. Corrected through `timedatectl` on Pi and in `System > Date & Time` in OMV
-- Pi-Hole installation next? Will need a different port than OMV
+- Pi-Hole installation next? Will need to use a different port than OMV to avoid conflicts
