@@ -32,11 +32,13 @@ server {
     }
 }
 ```
-		- The above creates forwarding paths to `/app1` and `/app2` when the server receives requests on port 80. Essentially, when we get a request to `pi-ip-address` or `server_name`, nginx will check which endpoint to forward the traffic to.
-		- Additionally, you can add another location to `/` in the same format to provide default behavior for the reverse proxy : So you could forward traffic to app2's port at the `/` endpoint
-		- For any configurations beyond what is above, see the default config file for reference. *(here, we're only doing HTTP, I may return for SSL at a later point)*
-	- Create a symlink in `sites-enabled/` : `sudo ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/`
-3. After making your changes, restart nginx : `sudo systemctl restart nginx`
+
+- The above creates forwarding paths to `/app1` and `/app2` when the server receives requests on port 80. Essentially, when we get a request to `pi-ip-address` or `server_name`, nginx will check which endpoint to forward the traffic to.
+- Additionally, you can add another location to `/` in the same format to provide default behavior for the reverse proxy : So you could forward traffic to app2's port at the `/` endpoint
+- For any configurations beyond what is above, see the default config file for reference. *(here, we're only doing HTTP, I may return for SSL at a later point)*
+
+3. Create a symlink in `sites-enabled/` : `sudo ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/`
+4. After making your changes, restart nginx : `sudo systemctl restart nginx`
 
 ## Additional notes and issues
 There's additional setup we could do for TLS/SSL, but for now I'm just going to keep it to HTTP
