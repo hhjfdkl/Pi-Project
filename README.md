@@ -31,9 +31,9 @@
 
 **Hosted Applications**: 
 - _OpenMediaVault (OMV)_ : Hosted at `/omv/` on nginx : Port 8081,4443 (http,https)
-    - See [OpenMediaVault](/OpenMediaVault.md) documentation
+    - See [OpenMediaVault](/OpenMediaVault.md) section
 - _Pi-Hole_ : Hosted at `/pihole/` and `/` on nginx : Port 8080,8443,53(http,https,dns) 
-    - See [Pi-Hole](/Pi-Hole.md) documentation
+    - See [Pi-Hole](/Pi-Hole.md) section
 
 ## Steps for Setup
 Hardware Assembly
