@@ -67,9 +67,10 @@ Now that the drive is mounted and a shared folder is created, we can set up shar
 
 ## Issues encountered
 7/12/25: Don't try to use NFS with NTFS. SMB works with NTFS easily.
-	If you want to use NFS, format your hard drive as ext4. In my case, I'm using a prior external hard drive that was originally used with a Windows machine, so it's NTFS.
+- If you want to use NFS, format your hard drive as ext4. In my case, I'm using a prior external hard drive that was originally used with a Windows machine, so it's NTFS.
+
 7/12/25: When setting up your shared folder, *make sure you pay attention to the relative path*
-	I had set "Test1" as my original share name, and it pre-populates the relative path to match. This created an empty directory called "Test1" in my hard drive and shared that on the network.
+- I had set "Test1" as my original share name, and it pre-populates the relative path to match. This created an empty directory called "Test1" in my hard drive and shared that on the network.
 
 ## Change Notes
 7/12/25 : Only conducted the basic set up. I'll document any future changes or tinkering on this Pi here. 
