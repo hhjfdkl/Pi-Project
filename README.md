@@ -27,7 +27,7 @@
 **Raspberry Pi Imager**: To flash OS onto the microSD card
 
 **Web Server**: _Nginx_ : Configured for reverse-proxy between services
-- See reverse-proxy-setup.md
+- See [Reverse Proxy](/reverse-proxy-setup.md) section
 
 **Hosted Applications**: 
 - _OpenMediaVault (OMV)_ : Hosted at `/omv/` on nginx : Port 8081,4443 (http,https)
