@@ -5,35 +5,34 @@
 
 
 ## Hardware Used
-Machine: Raspberry Pi 5, 4GB RAM
+**Machine**: Raspberry Pi 5, 4GB RAM
 
-Storage: WD MyPassport
+**Storage**: WD MyPassport
 - USB-powered
 
-Power Supply: CanaKit 45W
+**Power Supply**: CanaKit 45W
 
-Chasis: CanaKit Case for Raspberry Pi 5
-- Optional
+**Chasis**: CanaKit Case for Raspberry Pi 5
 
-Cooling: Raspberry Pi Active Cooler
+**Cooling**: Raspberry Pi Active Cooler
 
-SD Card: MicroSD Card 32GB
+**SD Card**: MicroSD Card 32GB
 - Also, a USB adapter to flash the OS onto the card
 
-Network cable: Cat5/Cat6 cable
+**Network cable**: Cat5/Cat6 cable
 
 ## Software
-Operating System: Raspberry Pi OS 64-bit Lite
+**Operating System**: Raspberry Pi OS 64-bit Lite
 
-Raspberry Pi Imager: To flash OS onto the microSD card
+**Raspberry Pi Imager**: To flash OS onto the microSD card
 
-Web Server: Nginx : Configured for reverse-proxy between services
+**Web Server**: _Nginx_ : Configured for reverse-proxy between services
 - See reverse-proxy-setup.md
 
-Hosted Applications: 
-- OpenMediaVault (OMV) : Hosted at `/omv/` on nginx : Port 8081,4443 (http,https)
+**Hosted Applications**: 
+- _OpenMediaVault (OMV)_ : Hosted at `/omv/` on nginx : Port 8081,4443 (http,https)
     - See OpenMediaVault.md
-- Pi-Hole : Hosted at `/pihole/` and `/` on nginx : Port 8080,8443,53(http,https,dns) 
+- _Pi-Hole_ : Hosted at `/pihole/` and `/` on nginx : Port 8080,8443,53(http,https,dns) 
     - See Pi-Hole.md
 
 ## Steps for Setup
