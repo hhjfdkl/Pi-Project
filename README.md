@@ -36,6 +36,8 @@ Put image onto MicroSD
 	- Review the device and make sure it's the correct one
 
 Put the imaged microSD card into the pi, power it on and connect it to your router via cable
+
+## Steps for OpenMediaVault setup
 1. ssh into the pi : `ssh <user>@<ip-address>`
 	* To find the Pi's IP address, either use your router's console or scan your network with something like *nmap*
 	- Enter any passwords you designated during OS setup
@@ -74,3 +76,16 @@ Now that the drive is mounted and a shared folder is created, we can set up shar
 - Enabled monitoring, set up the dashboard.
 - Clock was out of sync. Corrected through `timedatectl` on Pi and in `System > Date & Time` in OMV
 - Pi-Hole installation next? Will need to use a different port than OMV to avoid conflicts
+
+7/13/25 : 
+- Add in nginx reverse proxy to handle routing of traffic between Pi-Hole and OMV
+
+7/14/25 :
+- nginx Reverse proxy setup **completed** : See additional document added.
+	* First-time use of nginx and learned a lot about setting up this basic config in this.
+	- Adjusted omv to run on 8080 with the endpoint `/omv/` in the nginx reverse proxy
+	- pi-hole on 80, is set to be `/pihole/` and `/`, so when calling the Pi, it will open the Pi-Hole menu
+- pi-hole setup
+
+7/15/25 :
+- TODO: Break up this README into different spaces - use the README as an index and have the documents referenced in the index instead of how I have it set up now
