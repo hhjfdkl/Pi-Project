@@ -6,21 +6,30 @@
 
 ## Hardware Used
 Machine: Raspberry Pi 5, 4GB RAM
+
 Storage: WD MyPassport
 - USB-powered
+
 Power Supply: CanaKit 45W
+
 Chasis: CanaKit Case for Raspberry Pi 5
 - Optional
+
 Cooling: Raspberry Pi Active Cooler
+
 SD Card: MicroSD Card 32GB
 - Also, a USB adapter to flash the OS onto the card
+
 Network cable: Cat5/Cat6 cable
 
 ## Software
 Operating System: Raspberry Pi OS 64-bit Lite
+
 Raspberry Pi Imager: To flash OS onto the microSD card
+
 Web Server: Nginx : Configured for reverse-proxy between services
 - See reverse-proxy-setup.md
+
 Hosted Applications: 
 - OpenMediaVault (OMV) : Hosted at `/omv/` on nginx : Port 8081,4443 (http,https)
     - See OpenMediaVault.md
@@ -67,3 +76,4 @@ Put the imaged microSD card into the pi, power it on. You should now be able to 
 
 7/15/25 :
 - Completed Pi-Hole setup
+
