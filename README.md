@@ -81,3 +81,4 @@ Put the imaged microSD card into the pi, power it on. You should now be able to 
 
 7/17/25 :
 - Updated Unbound to have logging for troubleshooting purposes
+- Fixed an error by disabling `unbound-resolvconf.service`, though the error didn't affect any actual functionality of Pi-Hole or the rest of the machine.

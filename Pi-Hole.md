@@ -54,10 +54,10 @@ Per the documentation, Pi-Hole will install on 80 by default, but if that's in u
 - The documentation is ~~false~~ **true** ! *(it just takes a minute to re-do the ports)* But I was able to find the .config file: `/etc/pihole/pihole.toml`
 
 Don't add additional endpoints to your nginx redirect for Pi-Hole. If you simply redirect to `127.0.0.1:8080` it will work properly
-- When I tried directing to `127.0.0.1:8080/admin/login/` it would break the UI in Chromium browsers and Firefox just wouldn't work.
+- When I tried directing to `127.0.0.1:8080/admin/login/` it would break the UI in Chromium browsers and in Firefox the UI just wouldn't work.
 
-Encountered an issues with `unbound-resolvconf.service`. Error message was `Failed to set DNS configuration:` and some info regarding a loopback device. 
-- I found a GitHub Issue [here](https://github.com/NLnetLabs/unbound/issues/1161) and it's also in the Unbound documentation [here](https://unbound.docs.nlnetlabs.nl/en/latest/use-cases/local-stub.html). (In the docs, just search "resolvconf" and the relevant section will come up)
+Encountered an issue with `unbound-resolvconf.service`. Error message was `Failed to set DNS configuration:` and some info regarding a loopback device. 
+- I found a GitHub Issue [here](https://github.com/NLnetLabs/unbound/issues/1161) that matched this exactly, and it's also in the Unbound documentation [here](https://unbound.docs.nlnetlabs.nl/en/latest/use-cases/local-stub.html). (In the docs, just search "resolvconf" and the relevant section will come up)
 - I stopped, disabled, and masked the service with `sudo systemctl [stop/disable/mask] unbound-resolvconf.service`
 	- After doing this, systemd doesn't automatically clear its cache, so it'll still look like you have an error. Just run `sudo systemctl daemon-reload` to make sure the daemon is refreshed and also `sudo systemctl reset-failed` to refresh systemd's records of services in the "failed" state
 * It didn't seem to affect how Pi-Hole was performing, but the error message was annoying me when I saw it.
@@ -70,8 +70,9 @@ Encountered an issues with `unbound-resolvconf.service`. Error message was `Fail
 * Deleted error log
 
 # Notes for later additions
-You can grab the password hash for your admin login from `cat /etc/pihole/steupVars.conf | grep WEBPASSWORD`
+You can grab the password hash for your admin login from `cat /etc/pihole/setupVars.conf | grep WEBPASSWORD`
 - Useful for scripting in case you need to use your admin account for something 
+- It looks like it may need to be manually set up
 * I read about scripting the "Disable Blocking" command and calling that through some other convenient device so you don't have to go in and manually disable blocking in case you sometimes need to access blocked sites
 UI has "Basic/Expert" button. Make sure to flip to Expert to see all options for configuration
 "Teleporter" is to export/import Pi-Hole's settings
