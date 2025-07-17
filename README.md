@@ -76,3 +76,8 @@ Put the imaged microSD card into the pi, power it on. You should now be able to 
 7/15/25 :
 - Completed Pi-Hole setup
 
+7/16/25 :
+- First error in Pi-Hole, but turned out to be a non-issue.
+
+7/17/25 :
+- Updated Unbound to have logging for troubleshooting purposes

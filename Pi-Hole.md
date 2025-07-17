@@ -43,7 +43,9 @@ Now that we've confirmed that unbound is working, we need to configure Pi-Hole t
 - Update Pi-Hole DNS by unchecking the box for the Upstream DNS Server previously selected and enter: `127.0.0.1#5335` in the Custom DNS servers section
 - This causes us to use the *root* DNS servers for the Internet
 
-
+Added Logging to Unbound by adjusting `/etc/unbound.conf.d/pi-hole.conf` to point to the default, commented out log file `/var/log/unbound/unbound.log`
+- Added `log-time-ascii: yes` for human readability
+- Adjusted `verbosity: 1` for now. *1 to 3 seems best*
 
 # Issues
 Per the documentation, Pi-Hole will install on 80 by default, but if that's in use it will switch to 8080. If 8080 isn't available, it will not be available and you'll have to manually configure it.
@@ -53,7 +55,11 @@ Per the documentation, Pi-Hole will install on 80 by default, but if that's in u
 Don't add additional endpoints to your nginx redirect for Pi-Hole. If you simply redirect to `127.0.0.1:8080` it will work properly
 - When I tried directing to `127.0.0.1:8080/admin/login/` it would break the UI in Chromium browsers and Firefox just wouldn't work.
 
-
+# Error messages
+7/16/25: Encountered error from Unbound, but it's most likely just a network hiccup and hasn't affected service from what I can tell
+- `Connection error (127.0.0.1#5335): TCP connection failed while receiving payload length from upstream (Connection prematurely closed by remote server)`
+- Checked unbound with `sudo netstat -nlp | grep "unbound"` and `sudo netstat -nlp | grep 5335`, it's running fine
+* Deleted error log
 
 # Notes for later additions
 You can grab the password hash for your admin login from `cat /etc/pihole/steupVars.conf | grep WEBPASSWORD`
