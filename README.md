@@ -56,14 +56,15 @@ Put the imaged microSD card into the pi, power it on. You should now be able to 
 
 
 ## Change Notes
-7/12/25 : Only conducted the basic set up. I'll document any future changes or tinkering on this Pi here. 
-- OMV setup **completed**
-- Enabled monitoring, set up the dashboard.
-- Clock was out of sync. Corrected through `timedatectl` on Pi and in `System > Date & Time` in OMV
-- Pi-Hole installation next? Will need to use a different port than OMV to avoid conflicts
+7/17/25 :
+- Updated Unbound to have logging for troubleshooting purposes
+- Fixed an error by disabling `unbound-resolvconf.service`, though the error didn't affect any actual functionality of Pi-Hole or the rest of the machine.
 
-7/13/25 : 
-- Add in nginx reverse proxy to handle routing of traffic between Pi-Hole and OMV
+7/16/25 :
+- First error in Pi-Hole, but turned out to be a non-issue.
+
+7/15/25 :
+- Completed Pi-Hole setup
 
 7/14/25 :
 - nginx Reverse proxy setup **completed** : See additional document added.
@@ -73,12 +74,11 @@ Put the imaged microSD card into the pi, power it on. You should now be able to 
 - pi-hole setup
 - Broke up this README into different spaces - other .md documents for each configuration and software setup
 
-7/15/25 :
-- Completed Pi-Hole setup
+7/13/25 : 
+- Add in nginx reverse proxy to handle routing of traffic between Pi-Hole and OMV
 
-7/16/25 :
-- First error in Pi-Hole, but turned out to be a non-issue.
-
-7/17/25 :
-- Updated Unbound to have logging for troubleshooting purposes
-- Fixed an error by disabling `unbound-resolvconf.service`, though the error didn't affect any actual functionality of Pi-Hole or the rest of the machine.
+7/12/25 : Only conducted the basic set up. I'll document any future changes or tinkering on this Pi here. 
+- OMV setup **completed**
+- Enabled monitoring, set up the dashboard.
+- Clock was out of sync. Corrected through `timedatectl` on Pi and in `System > Date & Time` in OMV
+- Pi-Hole installation next? Will need to use a different port than OMV to avoid conflicts
